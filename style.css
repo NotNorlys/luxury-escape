@@ -1,0 +1,385 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#f5f1eb;
+  --card:#fffdf9;
+  --ink:#4a433a;
+  --muted:#6b6359;
+  --line:rgba(203,191,174,.55);
+  --accent:#d6c6b3;
+}
+
+body{
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  max-width:1100px;
+  margin:70px auto;
+  padding:0 20px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.10);
+  animation:slowZoom 25s ease-in-out infinite alternate;
+  filter:saturate(1.5) contrast(1.05) brightness(0.95);
+  z-index:0;
+}
+
+@keyframes slowZoom{
+  from{ transform:scale(1.08); }
+  to{ transform:scale(1.18); }
+}
+
+/* 🔥 IMPORTANTE — NO BLOQUEA CLICKS */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 70% 22%, rgba(255,200,140,0.55), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(40,190,200,0.25), transparent 60%),
+    linear-gradient(to bottom,
+      rgba(40,15,5,0.75),
+      rgba(140,55,20,0.30),
+      rgba(255,160,90,0.15),
+      rgba(10,12,8,0.85)
+    );
+  z-index:1;
+}
+
+.hero .overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:24px;
+  z-index:5;   /* 🔥 asegura que los botones funcionen */
+}
+
+.hero-panel{
+  padding:40px;
+  border-radius:30px;
+  border:1px solid rgba(255,220,170,.25);
+  background:linear-gradient(135deg, rgba(85,35,10,.45), rgba(20,70,75,.35));
+  backdrop-filter:blur(15px);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  max-width:900px;
+}
+
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:78px;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:#fff4e3;
+  text-shadow:0 10px 40px rgba(0,0,0,.8);
+  margin-bottom:15px;
+}
+
+.hero-line{
+  width:220px;
+  height:2px;
+  background:linear-gradient(to right,#ffd7a3,rgba(255,215,163,0));
+  margin:20px auto;
+}
+
+.hero p{
+  letter-spacing:8px;
+  font-size:14px;
+  color:#ffe7c6;
+  margin-bottom:20px;
+}
+
+
+/* =========================
+   FAVORITO HERO
+========================= */
+
+#favBox{
+  margin-top:15px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  border-radius:999px;
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,210,150,.35);
+  color:#fff4e3;
+  font-size:13px;
+  backdrop-filter:blur(8px);
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:13px;
+  letter-spacing:1px;
+  cursor:pointer;
+  border:none;
+  transition:all .25s ease;
+}
+
+.btn:hover{
+  background:#e8dfd2;
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.mini-btn{
+  padding:6px 12px;
+  border-radius:999px;
+  border:none;
+  background:#ffffff33;
+  color:#fff;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.mini-btn:hover{
+  background:#ffffff55;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+  height:350px;
+  border-radius:26px;
+  margin-bottom:50px;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  padding:35px;
+  background-size:cover;
+  background-position:center;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+
+.card-content{
+  position:relative;
+  z-index:2;
+}
+
+.card h2{
+  font-family:"Playfair Display", serif;
+  font-size:34px;
+}
+
+.meta{
+  font-size:14px;
+  margin:8px 0;
+}
+
+.desc{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+
+/* =========================
+   GRAFICO
+========================= */
+
+.chart-wrap{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  margin-bottom:50px;
+}
+
+.chart-title{
+  font-family:"Playfair Display", serif;
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+
+/* =========================
+   DESTINO PAGE
+========================= */
+
+.hero-small{
+  height:55vh;
+  border-radius:26px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  margin-top:30px;
+}
+
+.hero-small::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.4);
+}
+
+.hero-small .text{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  color:#fff;
+}
+
+.hero-small .text h1{
+  font-family:"Playfair Display", serif;
+  font-size:44px;
+}
+
+.hero-small .text p{
+  margin-top:8px;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:25px;
+  margin:20px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.section h3{
+  font-family:"Playfair Display", serif;
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.kv{
+  padding:15px;
+  border-radius:16px;
+  background:#faf5ee;
+  border:1px solid rgba(203,191,174,.5);
+}
+
+.kv .k{
+  font-size:12px;
+  letter-spacing:2px;
+  opacity:.7;
+}
+
+.kv .v{
+  margin-top:6px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.list{
+  line-height:1.8;
+  font-size:14px;
+  color:var(--muted);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:60px 20px;
+  text-align:center;
+  font-size:12px;
+  letter-spacing:2px;
+  color:#a89f93;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+  .hero h1{
+    font-size:42px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    height:400px;
+  }
+}
