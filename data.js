@@ -103,9 +103,10 @@ const DESTINOS = {
     descripcion:"Moderno crucero de lujo con entretenimiento, gastronomía internacional y vistas al mar abiertas. Una experiencia de viaje todo en uno.",
     total:3300,
     porDia:367,
-    hotel:"MSC World America",
+    Crucero:"MSC World America",
     incluye:"Todo incluido",
     coords:[25.7617,-80.1918]
   }
+
 
 };
