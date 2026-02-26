@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury Escape | Sept 5–13</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Escape</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-tropical-sunset-1580/1080p.mp4" type="video/mp4">
-    </video>
+<section class="hero">
+  <video autoplay muted loop playsinline id="heroVideo">
+    <source src="https://cdn.coverr.co/videos/coverr-tropical-sunset-1580/1080p.mp4" type="video/mp4">
+  </video>
 
-    <div class="overlay">
-      <div class="hero-panel">
-        <h1>Luxury Escape</h1>
-        <div class="hero-line"></div>
-        <p>SEPTEMBER 5 — 13</p>
-        <div id="favBox">Cargando favorito…</div>
-      </div>
+  <div class="overlay">
+    <div class="hero-panel">
+      <h1 id="heroTitle">Luxury Escape</h1>
+      <div class="hero-line"></div>
+      <p>SEPTEMBER 5 — 13</p>
+      <div id="favBox">❤️ Favorito: <strong>Ninguno</strong></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="container">
-    <div class="chart-wrap" style="margin-bottom:46px;">
-      <div class="chart-title">Comparación de precio por día</div>
-      <canvas id="priceChart" height="140"></canvas>
-    </div>
-
-    <div id="cards"></div>
+<div class="container">
+  <div class="chart-wrap">
+    <h2>Comparación precio por día</h2>
+    <canvas id="priceChart"></canvas>
   </div>
 
-  <footer>CURATED TRAVEL EXPERIENCE • 9 DAYS • LUXURY EDITION</footer>
+  <div id="cards"></div>
+</div>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+<footer>LUXURY ESCAPE • PREMIUM EDITION</footer>
+
+<!-- 🎵 MÚSICA -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" class="music-btn">🔇</button>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>
