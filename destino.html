@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Destino | Luxury Escape</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destino</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 </head>
+
 <body>
 
-  <div class="topbar">
-    <a class="back" href="index.html">← VOLVER</a>
-    <div style="font-size:12px;letter-spacing:2px;opacity:.75;">SEPT 5 — 13</div>
-  </div>
+<div class="topbar">
+  <a href="index.html">← VOLVER</a>
+</div>
 
-  <div class="container">
-    <div id="heroImg" class="hero-small">
-      <div class="text">
-        <h1 id="heroTitle">Destino</h1>
-        <p id="heroSubtitle">—</p>
-      </div>
+<div class="container">
+
+  <div id="destinoHero" class="hero-small">
+    <div class="text">
+      <h1 id="destinoTitle">Destino</h1>
+      <p id="destinoSubtitle">—</p>
     </div>
-
-    <div id="destino"></div>
   </div>
 
-  <footer>Luxury Escape • Destination Page</footer>
+  <div id="destinoInfo"></div>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <div class="map-container">
+    <h2>Ubicación</h2>
+    <div id="map"></div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="destino.js"></script>
+
 </body>
 </html>
